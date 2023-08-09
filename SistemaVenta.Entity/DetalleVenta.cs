@@ -22,6 +22,7 @@ public partial class DetalleVenta
     public decimal? Precio { get; set; }
 
     public decimal? Total { get; set; }
+    
 
     public virtual Venta? IdVentaNavigation { get; set; }
 }

@@ -1,3 +1,5 @@
+using SistemaVenta.AplicacionWeb.Utilidades.Automapper;
+
 using SistemaVenta.IOC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,9 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.InyectarDependencia(builder.Configuration);
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
