@@ -24,7 +24,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-sm-3">
-                <button class="btn btn-success" data-toggle="modal" data-target="#modalData"><i class="fas fa-plus-circle"></i> Nuevo Producto</button>
+                <button class="btn btn-success" id="btnNuevo"><i class="fas fa-plus-circle"></i> Nuevo Producto</button>
             </div>
         </div>
         <hr />
@@ -46,44 +46,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><img style="height:60px ;" src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300" class="rounded mx-auto d-block" /></td>
-                            <td>12312312</td>
-                            <td>Marca 1</td>
-                            <td>Descripcion 1</td>
-                            <td>Categoria 1</td>
-                            <td>120</td>
-                            <td>120</td>
-                            <td><span class="badge badge-info">Activo</span></td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><img style="height:60px ;" src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300" class="rounded mx-auto d-block" /></td>
-                            <td>12312312</td>
-                            <td>Marca 2</td>
-                            <td>Descripcion 2</td>
-                            <td>Categoria 2</td>
-                            <td>100</td>
-                            <td>140</td>
-                            <td><span class="badge badge-danger">No Activo</span></td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
+                       
+                        
                     </tbody>
                 </table>
             </div>
@@ -126,7 +90,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="cboCategoria">Categoria</label>
                                     <select class="form-control form-control-sm" id="cboCategoria">
-                                        <option value="0">seleccionar</option>
+                                        
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-6">
@@ -155,7 +119,7 @@
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <img id="imgProducto" style="max-width:200px;" src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300" class="rounded mx-auto d-block" alt="...">
+                            <img id="imgProducto" style="max-width:200px;" src="" class="rounded mx-auto d-block" alt="...">
                         </div>
 
                     </div>
@@ -184,8 +148,8 @@
     <script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
 
     <script src="~/js/vistas/Producto_Index.js"></script>
-    <!-- SOLO ES DE EJEMPLO - IGNORAR -->
-    <script src="~/js/vistas/datatables-demo.js"></script>
+    @*<!-- SOLO ES DE EJEMPLO - IGNORAR -->
+    <script src="~/js/vistas/datatables-demo.js"></script>*@
 
 }
 
