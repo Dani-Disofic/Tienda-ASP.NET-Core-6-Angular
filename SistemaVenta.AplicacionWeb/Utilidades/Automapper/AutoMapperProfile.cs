@@ -186,7 +186,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
                 )
                  .ForMember(destino =>
                 destino.NombreCliente,
-                opt => opt.MapFrom(origen => origen.IdVentaNavigation.NombreCliente)
+                opt => opt.MapFrom(origen => origen.IdVentaNavigation.nombreCliente)
                 )
                  .ForMember(destino =>
                 destino.SubTotalVenta,

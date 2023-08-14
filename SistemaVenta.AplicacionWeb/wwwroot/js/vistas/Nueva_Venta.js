@@ -205,7 +205,7 @@ $("#btnTerminarVenta").click(function () {
         toastr.warning("", "Necesita ingresar algun producto")
         return;
     }
-
+    
     const vmDetalleVena = ProductosParaVenta;
 
     const venta = {
@@ -218,28 +218,37 @@ $("#btnTerminarVenta").click(function () {
         DetalleVenta : vmDetalleVena
     }
     $("#btnTerminarVenta").LoadingOverlay("show");
+    
     fetch("/Venta/RegistrarVenta", {
         method: "POST",
         headers: { "Content-Type": "application/json;charset=utf-8" },
         body:JSON.stringify(venta)
     })
         .then(response => {
+            //console.log("Response status:", response.status);
             $("#btnTerminarVenta").LoadingOverlay("hide");
             return response.ok ? response.json() : Promise.reject(response);
-        })
+            
+        }) 
         .then(responseJson => {
+            console.log("Response JSON:", responseJson);
             if (responseJson.estado) {
+                
                 ProductosParaVenta = [];
                 mostrarProducto_Precios();
                 $("#txtDocumentoCliente").val("")
                 $("#txtNombreCliente").val("")
-                $("#cboTipoDocumentoVenta").val("#cboTipoDocumentoVenta option:first").val()
+                $("#cboTipoDocumentoVenta").val($("#cboTipoDocumentoVenta option:first").val())
 
                 swal("Registrado!",`Numero Venta: ${responseJson.objeto.numeroVenta}`,"success")
-               } 
+            } 
                 else
                     {
                         swal("Lo sentimos","No se pudo registrar la venta","error")
                     }
-     })
+        })
+        .catch(error => {
+            console.error("Fetch error:", error); // Agrega este log para capturar errores en la solicitud
+            // Manejar el error de manera adecuada
+        });
 })

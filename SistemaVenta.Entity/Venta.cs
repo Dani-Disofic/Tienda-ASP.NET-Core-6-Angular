@@ -20,7 +20,7 @@ public partial class Venta
     public decimal? ImpuestoTotal { get; set; }
 
     public decimal? Total { get; set; }
-    public string? NombreCliente { get; set; }
+    public string? nombreCliente { get; set; }
 
     public DateTime? FechaRegistro { get; set; }
 
